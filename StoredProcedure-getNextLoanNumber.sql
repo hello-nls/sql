@@ -1,6 +1,6 @@
-– =============================================
-– Description:	get next loan number
-– =============================================
+-– =============================================
+-– Description:	get next loan number
+-– =============================================
 CREATE PROCEDURE [dbo].[getNextLoanNumber]
 @portfolioCodeId int
 
@@ -34,7 +34,7 @@ BEGIN TRANSACTION
 COMMIT TRANSACTION
 
 select @newLoanNumber
+
 END
 
 GO
-
