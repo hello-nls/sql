@@ -1,5 +1,5 @@
--- 
--- https://community.nortridge.com/t/next-payment-due-date/1751 
+-- NOTE:  this could be just one of the many ways to reliably implement this particular requirement  
+--                 https://community.nortridge.com/t/next-payment-due-date/1751 
 --
 	select
 		case when (select min(date_due) from loanacct_payments_due where acctrefno = 1) is null  
