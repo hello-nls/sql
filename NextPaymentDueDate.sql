@@ -1,11 +1,10 @@
-/*
- * NOTE:  this could be just some of the many ways to reliably implement this particular requirement  
- *                https://community.nortridge.com/t/next-payment-due-date/1751 
- */
+-- NOTE:  this could be just some of the many ways to reliably implement this particular requirement  
+--                https://community.nortridge.com/t/next-payment-due-date/1751 
+--
 
 -- -----------------------------------------------------------------------------------------
 
-/* from Alan */
+-- from Alan 
 begin
 declare 
 
@@ -36,7 +35,7 @@ end
 -- -----------------------------------------------------------------------------------------
 
 
-/* from Jojo */
+-- from Jojo 
 select
    case when (select min(date_due) from loanacct_payments_due where acctrefno = 1) is null  
    then 
@@ -49,7 +48,7 @@ select
 -- -----------------------------------------------------------------------------------------
 
 
-/* from Larry */
+-- from Larry 
 SELECT	loan_number,
 ISNULL((SELECT MIN(date_due)
 FROM loanacct_payments_due (NOLOCK)
