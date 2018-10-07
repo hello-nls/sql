@@ -37,7 +37,7 @@ end
 -- -----------------------------------------------------------------------------------------
 
 
--- from Jojo 
+-- from Jojo (version 1)
 select
    case when (select min(date_due) from loanacct_payments_due where acctrefno = 1) is null  
    then 
@@ -45,6 +45,15 @@ select
    else 
 	(select min(date_due) from loanacct_payments_due where acctrefno = 1)
    end
+
+
+-- from Jojo (version 2)
+select L.loan_number, L.acctrefno, 
+   isnull(
+		(select min(date_due) from loanacct_payments_due D1 where D1.acctrefno = L.acctrefno),    
+			(select next_principal_payment_date from loanacct_payment P2 where P2.acctrefno = L.acctrefno) 
+   )
+from loanacct L join loanacct_payment P on L.acctrefno = P.acctrefno
 
 
 -- -----------------------------------------------------------------------------------------
