@@ -47,11 +47,12 @@ select
    end
 
 
--- from Jojo (version 2)
+-- from Jojo (version 2) 
+--  (based from Larry's version)
 select L.loan_number, L.acctrefno, 
    isnull(
-      (select min(date_due) from loanacct_payments_due D1 where D1.acctrefno = L.acctrefno),    
-	 (select next_principal_payment_date from loanacct_payment P2 where P2.acctrefno = L.acctrefno) 
+	  (select min(date_due) from loanacct_payments_due D1 where D1.acctrefno = L.acctrefno),    
+		 next_principal_payment_date
    )
 from loanacct L join loanacct_payment P on L.acctrefno = P.acctrefno
 
