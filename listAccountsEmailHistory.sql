@@ -13,7 +13,7 @@ Where loanacct_comments.comments  like '%EmailHistoryID%'
 -- From Ryan
 SELECT row_id, acctrefno, comments
 FROM nls.dbo.loanacct_comments
-Where loanacct_comments.comments like ‘%EmailHistoryID%’
+Where loanacct_comments.comments like '%EmailHistoryID%'
 
 
 -- From Jojo
