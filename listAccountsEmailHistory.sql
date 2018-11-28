@@ -22,3 +22,16 @@ FROM  loanacct_comments c, loanacct l
 where l.acctrefno = c.acctrefno 
 and c.comments like '%EmailHistoryID%'
 and c.created > getdate()-1
+
+
+
+/*
+* From Jojo (based on the new info from Greg)
+    "In the EmailHistory table the column NLSType will denote if this is from a contact or loan. Contact = 1, Loan = 2. 
+       If Loan == 2, the NLSKeyID is the loanacct.acctrefno. If Contact = 1, the NLSKeyID is the cif.cifno." -Greg
+*/ 
+select l.acctrefno, l.loan_number, e.sentdate
+from EmailHistory e, loanacct l
+where l.acctrefno = e.NLSKeyID 
+and e.NLSType = 2
+and e.SentDate > getdate()-1 
