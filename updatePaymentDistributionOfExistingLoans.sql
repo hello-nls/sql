@@ -1,3 +1,5 @@
+-- Source: https://community.nortridge.com/t/add-loan-payment-rule-to-a-large-batch-of-existing-loans/1968
+
 update  loanacct_setup 
 set payment_distribution_order = (
 	select loan_template.payment_distribution_order 
