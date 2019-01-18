@@ -2,7 +2,7 @@
 -- Source2: https://community.nortridge.com/t/payment-distribution/2009/24 
 
 
--- from jojo
+-- from jojo (version 1) 
 update  loanacct_setup 
 set payment_distribution_order = (
 	select loan_template.payment_distribution_order 
