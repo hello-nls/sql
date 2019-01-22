@@ -14,4 +14,4 @@ where LoanCommunicationPreferencesID = COMMID
 
 -- set the email address
 insert into LoanCommunicationAddress (LoanCommunicationPreferencesID, Address, AddressType) 
-values (COMMID, BuyerEmail, 0)
+values (COMMID, BUYEREMAILADDRESS, 0)
