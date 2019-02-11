@@ -1,6 +1,7 @@
 
 /*
- * Source: https://community.nortridge.com/t/sql-select-for-tin-ssn/444  
+ * Source(s): https://community.nortridge.com/t/sql-select-for-tin-ssn/444   
+ *            https://nortridge.freshdesk.com/support/tickets/4411   
  */
 
 
