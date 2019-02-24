@@ -5,6 +5,14 @@ where tmr_id in (select tmr_id from tmr where parent_refno = 123456 and tmr_code
 
 --
 
+
+select distinct(userdef01) from tmr_udf 
+where tmr_id in (select tmr_id from tmr where tmr_code_id = 123)
+
+
+
+--
+
 select userdef01 
 from tmr_udf 
 where tmr_id in (
