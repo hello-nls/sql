@@ -14,3 +14,8 @@ SQL Script samples, etc
 
 
 
+.
+
+Etc.
+
+https://nostarch.com/practicalSQL
