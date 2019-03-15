@@ -18,6 +18,19 @@ SELECT 1 WHERE (
 
 
 
+-- 
+
+
+SELECT 'the account does not have any secondary status' WHERE (
+   0 =  (SELECT COUNT(acctrefno) FROM loanacct_statuses   
+	        WHERE acctrefno = NLS_ACTIVE_ACCTREFNO 
+		   ) 
+)  
+
+
+
+--
+
 
 SELECT 1 WHERE (
 
